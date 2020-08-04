@@ -59,7 +59,10 @@ export default class Header extends Component {
     const { location } = this.props
 
     if (location.pathname !== prevProps.location.pathname) {
-      if (this.props.location.pathname === "/") {
+      if (
+        this.props.location.pathname === "/" ||
+        this.props.location.pathname === "/my-first-gatsby/"
+      ) {
         this.wrapper.animate([{ height: "20vh" }, { height: "70vh" }], {
           duration: 1000,
           fill: "forwards",
@@ -81,7 +84,11 @@ export default class Header extends Component {
     const { siteTitle, background, location } = this.props
     return (
       <HeaderWrapper
-        isHome={typeof location !== "undefined" && location.pathname === "/"}
+        isHome={
+          typeof location !== "undefined" &&
+          (location.pathname === "/" ||
+            location.pathname === "/my-first-gatsby/")
+        }
         ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}
       >
         <HeaderContainer>
