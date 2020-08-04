@@ -14,10 +14,17 @@ import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query LayoutQuery {
       site {
         siteMetadata {
           title
+        }
+      }
+      background: file(relativePath: { eq: "bg.jpeg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1240) {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }
@@ -25,7 +32,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        background={data.background}
+      />
       <div
         style={{
           margin: `0 auto`,
