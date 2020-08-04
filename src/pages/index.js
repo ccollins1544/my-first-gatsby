@@ -7,8 +7,8 @@ import SEO from "../components/seo"
 
 import PostListing from "../components/Posts/PostListing"
 
-const IndexPage = ({ data }) => (
-  <Layout>
+const IndexPage = ({ data, location }) => (
+  <Layout location={location}>
     <SEO title="Home" />
     <p>{data.site.siteMetadata.title}</p>
     <p>{data.site.siteMetadata.description}</p>
@@ -39,6 +39,9 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD YYYY")
+          }
+          fields {
+            slug
           }
           html
           excerpt(pruneLength: 280)

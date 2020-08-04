@@ -6,8 +6,9 @@ import SEO from "../components/seo"
 
 export default class about extends Component {
   render() {
+    const { location } = this.props
     return (
-      <Layout>
+      <Layout location={location}>
         <SEO title="About Us" />
         <h1>About Us</h1>
         <p>
