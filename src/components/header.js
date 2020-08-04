@@ -27,11 +27,33 @@ const HeaderWrapper = styled.header`
 
 const HeaderContainer = styled.div`
   position: relative;
+  display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 960px;
   padding: 1.45rem 1.0875rem;
   z-index: 2;
 `
+
+const MainNav = styled.nav`
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      margin-left: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      a {
+        text-decoration: none;
+        color: #fff;
+        &:hover {
+          border-bottom: 3px solid #524763;
+        }
+      }
+    }
+  }
+`
+
 export default class Header extends Component {
   componentDidUpdate = (prevProps, prevState) => {
     const { location } = this.props
@@ -76,7 +98,7 @@ export default class Header extends Component {
             </Link>
           </h1>
 
-          <nav>
+          <MainNav>
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -85,7 +107,7 @@ export default class Header extends Component {
                 <Link to="/about">About</Link>
               </li>
             </ul>
-          </nav>
+          </MainNav>
         </HeaderContainer>
         {background && (
           <Img
@@ -95,6 +117,7 @@ export default class Header extends Component {
               top: 0,
               width: "100%",
               height: "100%",
+              opacity: 0.3,
             }}
             fluid={background.childImageSharp.fluid}
           />
