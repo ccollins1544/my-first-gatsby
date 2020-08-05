@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 export default class PostPage extends Component {
   render() {
     const { data, location } = this.props
+    if (!data) return null
     return (
       <Layout location={location}>
         <SEO title={data.markdownRemark.frontmatter.title} />
