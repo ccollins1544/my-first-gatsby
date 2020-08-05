@@ -84,6 +84,9 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
+**NOTE** github pages doesn't load markdown images correctly so I disabled gh-pages. Also removed this from package.json
+`"deploy": "gatsby build --prefix-paths && gh-pages -d public"`
+
 ## 🎓 Learning Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
@@ -94,8 +97,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Deploy
 
-- [Github Pages](https://ccollins1544.github.io/my-first-gatsby/)
-- [![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://focused-beaver-2d90c2.netlify.app/)
+[![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://focused-beaver-2d90c2.netlify.app/)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 
