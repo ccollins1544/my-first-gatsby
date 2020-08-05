@@ -5,10 +5,12 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  My First Gatsby
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Blog site built with gatsby using markdown posts.
+
+This project was developed while taking Scott Tolinski course [Pro Gatsby](https://www.leveluptutorials.com/tutorials/pro-gatsby) and was a chance for me to practice and apply the concepts learned in the course.
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
@@ -92,8 +94,12 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
+- [Github Pages](https://ccollins1544.github.io/my-first-gatsby/)
+- [![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://focused-beaver-2d90c2.netlify.app/)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+### Credit
+
+- [Christopher Collins](https://ccollins.io)
+- [Pro Gatsby](https://www.leveluptutorials.com/tutorials/pro-gatsby) - Scott Tolinski
