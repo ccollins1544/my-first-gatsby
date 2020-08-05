@@ -12,7 +12,7 @@ const IndexPage = ({ data, location }) => (
     <SEO title="Home" />
     <p>{data.site.siteMetadata.title}</p>
     <p>{data.site.siteMetadata.description}</p>
-    {data.allMarkdownRemark.edges.map(({ node }) => (
+    {data.allContentfulBlogPost.edges.map(({ node }) => (
       <PostListing key={node.id} post={node} />
     ))}
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
@@ -32,19 +32,18 @@ export const query = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allContentfulBlogPost {
       edges {
         node {
           id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD YYYY")
+          slug
+          title
+          createdAt(formatString: "MMMM DD, YYYY")
+          body {
+            childMarkdownRemark {
+              excerpt
+            }
           }
-          fields {
-            slug
-          }
-          html
-          excerpt(pruneLength: 280)
         }
       }
     }

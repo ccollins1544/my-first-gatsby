@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `My First Gatsby`,
@@ -30,12 +34,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        excerpt_separator: `<!-- end -->`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -52,6 +50,13 @@ module.exports = {
     // `gatsby-plugin-offline`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `${process.env.CONTENTFUL_SPACEID}`,
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
+    },
   ],
 }
