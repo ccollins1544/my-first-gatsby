@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: ccollins1544/my-first-gatsby
 
 media_folder: static/assets
 
