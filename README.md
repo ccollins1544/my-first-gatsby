@@ -97,7 +97,9 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Deploy
 
-[![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://focused-beaver-2d90c2.netlify.app/)
+- [Contentful Netlify Deploy](https://relaxed-mclean-93e4d6.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/54b39c20-6276-46b3-a94a-cccdbecb1469/deploy-status)](https://app.netlify.com/sites/relaxed-mclean-93e4d6/deploys)
+
+- [Markdown Netlify Deploy](https://focused-beaver-2d90c2.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/1f0c5a8f-3527-42dd-ae13-ee3a5a80358b/deploy-status)](https://app.netlify.com/sites/focused-beaver-2d90c2/deploys)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 
