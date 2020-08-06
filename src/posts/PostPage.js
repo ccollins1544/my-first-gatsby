@@ -10,12 +10,12 @@ export default class PostPage extends Component {
     if (!data) return null;
     return (
       <Layout location={location}>
-        <SEO title={data.contentfulBlogPost.title} />
-        <span>{data.contentfulBlogPost.createdAt}</span>
-        <h1>{data.contentfulBlogPost.title}</h1>
+        <SEO title={data.markdownRemark.frontmatter.title} />
+        <span>{data.markdownRemark.frontmatter.date}</span>
+        <h1>{data.markdownRemark.frontmatter.title}</h1>
         <div
           dangerouslySetInnerHTML={{
-            __html: data.contentfulBlogPost.body.childMarkdownRemark.html,
+            __html: data.markdownRemark.html,
           }}
         />
         <Link to="/">Go back to the homepage</Link>
@@ -26,18 +26,12 @@ export default class PostPage extends Component {
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      id
-      slug
-      title
-      createdAt(formatString: "MMMM DD YYYY")
-      body {
-        childMarkdownRemark {
-          html
-        }
-      }
-      fields {
-        slug
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      excerpt
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD YYYY")
       }
     }
   }
