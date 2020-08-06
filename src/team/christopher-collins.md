@@ -1,4 +1,4 @@
 ---
 title: Christopher Collins
-bio: I like stuff
+bio: I like stuff...
 ---
