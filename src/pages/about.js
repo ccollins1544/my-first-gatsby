@@ -1,12 +1,12 @@
-import React, { Component } from "react"
-import { Link } from "gatsby"
+import React, { Component } from "react";
+import { Link } from "gatsby";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 export default class about extends Component {
   render() {
-    const { location } = this.props
+    const { location } = this.props;
     return (
       <Layout location={location}>
         <SEO title="About Us" />
@@ -19,6 +19,6 @@ export default class about extends Component {
         </p>
         <Link to="/">Go back to the homepage</Link>
       </Layout>
-    )
+    );
   }
 }
