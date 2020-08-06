@@ -5,10 +5,10 @@ const PostListing = ({ post }) => {
   return (
     <article>
       <h3>
-        <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+        <Link to={post.slug}>{post.title}</Link>
       </h3>
-      <span>{post.frontmatter.date}</span>
-      <p>{post.excerpt}</p>
+      <span>{post.createdAt}</span>
+      <p>{post.body.childMarkdownRemark.excerpt}</p>
     </article>
   )
 }
