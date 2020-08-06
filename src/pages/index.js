@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Listing from "../components/listing";
 
-const SecondPage = ({ location }) => (
+const Index = ({ location }) => (
   <Layout location={location}>
     <SEO title="Home" />
     <Listing />
@@ -13,4 +13,4 @@ const SecondPage = ({ location }) => (
   </Layout>
 );
 
-export default SecondPage;
+export default Index;
