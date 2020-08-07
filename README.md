@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  My First Gatsby
+  My First Gatsby - Markdown Posts
 </h1>
 
 Blog site built with gatsby using **markdown posts**.
