@@ -1,5 +1,6 @@
 backend:
   name: github
+  branch: markdown-posts
   repo: ccollins1544/my-first-gatsby
 
 media_folder: static/assets
