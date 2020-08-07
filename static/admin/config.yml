@@ -1,10 +1,10 @@
 backend:
   name: github
-  branch: markdown-posts
+  branch: development
   repo: ccollins1544/my-first-gatsby
 
-media_folder: static/assets
-public_folder: /assets
+media_folder: static/img
+public_folder: /img
 
 collections:
   - name: post
@@ -14,5 +14,15 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: date, label: Create At, widget: date }
+      - { name: body, label: Post, widget: markdown }
+      - { name: image, label: Image, widget: image }
+  - name: team
+    label: Team
+    folder: src/team
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Team Member", name: "title", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "markdown" }
       - { name: body, label: Post, widget: markdown }
       - { name: image, label: Image, widget: image }

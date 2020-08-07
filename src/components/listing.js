@@ -5,6 +5,7 @@ import { Link, StaticQuery, graphql } from "gatsby";
 const LISTING_QUERY = graphql`
   query BlogPostListing {
     allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(posts)/" } }
       limit: 10
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
@@ -12,10 +13,8 @@ const LISTING_QUERY = graphql`
         node {
           excerpt
           frontmatter {
-            title
             date(formatString: "MMMM DD, YYYY")
-          }
-          fields {
+            title
             slug
           }
         }
@@ -53,13 +52,13 @@ const Listing = () => (
     query={LISTING_QUERY}
     render={({ allMarkdownRemark }) =>
       allMarkdownRemark.edges.map(({ node }) => (
-        <Post key={node.fields.slug}>
-          <Link to={`${node.fields.slug}`}>
+        <Post key={node.frontmatter.slug}>
+          <Link to={`/posts${node.frontmatter.slug}`}>
             <h2>{node.frontmatter.title}</h2>
           </Link>
           <p>{node.frontmatter.date}</p>
           <p>{node.excerpt}</p>
-          <Link class="read-more" to={`${node.fields.slug}`}>
+          <Link class="read-more" to={`/posts${node.frontmatter.slug}`}>
             Read More
           </Link>
         </Post>

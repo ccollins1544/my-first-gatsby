@@ -5,6 +5,7 @@ import { StaticQuery, graphql, Link } from "gatsby";
 const POST_ARCHIVE_QUERY = graphql`
   query BlogPostArchive {
     allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(posts)/" } }
       limit: 5
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
@@ -12,8 +13,6 @@ const POST_ARCHIVE_QUERY = graphql`
         node {
           frontmatter {
             title
-          }
-          fields {
             slug
           }
         }
@@ -44,8 +43,8 @@ const Archive = () => (
           <h3>Archive</h3>
           <ArchiveList>
             {allMarkdownRemark.edges.map(edge => (
-              <li key={edge.node.fields.slug}>
-                <Link to={`${edge.node.fields.slug}`}>
+              <li key={edge.node.frontmatter.slug}>
+                <Link to={`/posts${edge.node.frontmatter.slug}`}>
                   {edge.node.frontmatter.title}
                 </Link>
               </li>

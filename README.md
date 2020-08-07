@@ -18,8 +18,6 @@ This project was developed while taking Scott Tolinski course [Pro Gatsby2](http
 
 - [![Netlify Status](https://api.netlify.com/api/v1/badges/1f0c5a8f-3527-42dd-ae13-ee3a5a80358b/deploy-status)](https://app.netlify.com/sites/focused-beaver-2d90c2/deploys) [markdown-posts branch](https://focused-beaver-2d90c2.netlify.app/)
 
-- [![Netlify Status](https://api.netlify.com/api/v1/badges/658ffed0-cff9-4f98-b186-4c4d69280a9c/deploy-status)](https://app.netlify.com/sites/keen-kowalevski-15f9f0/deploys) [development branch](https://keen-kowalevski-15f9f0.netlify.app/)
-
 ## 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
