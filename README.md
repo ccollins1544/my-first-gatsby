@@ -14,9 +14,11 @@ This project was developed while taking Scott Tolinski course [Pro Gatsby2](http
 
 ## 💫 Deploy
 
-- [![Netlify Status](https://api.netlify.com/api/v1/badges/54b39c20-6276-46b3-a94a-cccdbecb1469/deploy-status)](https://app.netlify.com/sites/relaxed-mclean-93e4d6/deploys) [Contentful Netlify Deploy](https://relaxed-mclean-93e4d6.netlify.app/)
+- [![Netlify Status](https://api.netlify.com/api/v1/badges/54b39c20-6276-46b3-a94a-cccdbecb1469/deploy-status)](https://app.netlify.com/sites/relaxed-mclean-93e4d6/deploys) [contentful-netlify branch](https://relaxed-mclean-93e4d6.netlify.app/)
 
-- [![Netlify Status](https://api.netlify.com/api/v1/badges/1f0c5a8f-3527-42dd-ae13-ee3a5a80358b/deploy-status)](https://app.netlify.com/sites/focused-beaver-2d90c2/deploys) [Markdown Netlify Deploy](https://focused-beaver-2d90c2.netlify.app/)
+- [![Netlify Status](https://api.netlify.com/api/v1/badges/1f0c5a8f-3527-42dd-ae13-ee3a5a80358b/deploy-status)](https://app.netlify.com/sites/focused-beaver-2d90c2/deploys) [markdown-posts branch](https://focused-beaver-2d90c2.netlify.app/)
+
+- [![Netlify Status](https://api.netlify.com/api/v1/badges/658ffed0-cff9-4f98-b186-4c4d69280a9c/deploy-status)](https://app.netlify.com/sites/keen-kowalevski-15f9f0/deploys) [development branch](https://keen-kowalevski-15f9f0.netlify.app/)
 
 ## 🧐 What's inside?
 
