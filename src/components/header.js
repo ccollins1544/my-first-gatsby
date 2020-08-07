@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
 import styled from "styled-components";
 
 import logo from "../images/logo.svg";
 
 const HeaderWrapper = styled.div`
-  background: #524763;
+  background: rgba(0, 0, 0, 0.8);
   img {
     margin-bottom: 0;
   }
@@ -28,6 +27,8 @@ const MainNav = styled.nav`
   ul {
     list-style: none;
     display: flex;
+    padding: 0.5rem 0;
+    margin-bottom: 0px;
     li {
       margin-left: 10px;
       font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -50,8 +51,8 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: "white",
-            textDecoration: "none",
+            color: `white`,
+            textDecoration: `none`,
           }}
         >
           <img
@@ -60,8 +61,8 @@ const Header = ({ siteTitle }) => (
             }}
             src={logo}
             alt="Level Up Tutorials Logo"
-          />
-          <span>{siteTitle}</span>
+          />{" "}
+          {siteTitle}
         </Link>
       </h1>
 
@@ -73,13 +74,18 @@ const Header = ({ siteTitle }) => (
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li>
-            <a href="/admin/">Admin</a>
-          </li>
         </ul>
       </MainNav>
     </HeaderContainer>
   </HeaderWrapper>
 );
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+};
+
+Header.defaultProps = {
+  siteTitle: ``,
+};
 
 export default Header;

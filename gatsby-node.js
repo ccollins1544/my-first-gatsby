@@ -2,10 +2,10 @@
  * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
- * Fix: https://github.com/gaearon/react-hot-loader/issues/1227
  */
+
+// You can delete this file if you're not using it
 const path = require("path");
-const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage.startsWith("develop")) {
@@ -19,45 +19,31 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
   }
 };
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === "MarkdownRemark") {
-    const slug = createFilePath({
-      node,
-      getNode,
-      basePath: "posts",
-    });
-
-    createNodeField({
-      node,
-      name: "slug",
-      value: `/posts${slug}`,
-    });
-  }
-};
-
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
+
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/(posts)/" } }
+        ) {
           edges {
             node {
-              fields {
+              frontmatter {
                 slug
               }
             }
           }
         }
       }
-    `).then(result => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    `).then(results => {
+      results.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
-          path: node.fields.slug,
-          component: path.resolve("./src/posts/PostPage.js"),
+          path: `/posts${node.frontmatter.slug}`,
+          component: path.resolve("./src/components/postLayout.js"),
           context: {
-            slug: node.fields.slug,
+            slug: `${node.frontmatter.slug}`,
           },
         });
       });

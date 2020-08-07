@@ -1,19 +1,52 @@
 import React from "react";
+import { StaticQuery, graphql } from "gatsby";
 
 import Layout from "../../components/layout";
 
-const Team = () => (
-  <Layout>
+const TEAM_QUERY = graphql`
+  query TeamMembers {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(team)/" } }
+      limit: 100
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+            bio
+          }
+        }
+      }
+    }
+  }
+`;
+
+const Team = ({ location }) => (
+  <Layout location={location}>
     <div>
       <h1>The Team</h1>
-      <p>
-        Lorem ipsum dolor amet disrupt shabby chic sriracha forage yr green
-        juice kinfolk ennui taxidermy godard mlkshk affogato art party 8-bit
-        cornhole. Thundercats before they sold out asymmetrical next level
-        disrupt pok pok readymade pabst. Tousled poutine tote bag, kickstarter
-        mlkshk pickled kitsch. Fam ramps literally, kinfolk humblebrag taiyaki
-        letterpress locavore food truck keytar +1 sriracha yr keffiyeh.
-      </p>
+      <ul>
+        <StaticQuery
+          query={TEAM_QUERY}
+          render={({ allMarkdownRemark }) =>
+            allMarkdownRemark.edges.map(({ node }) => (
+              <li>
+                <div>
+                  <strong>{node.frontmatter.title}</strong>
+                  <span> - {node.frontmatter.bio}</span>
+                </div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: node.html,
+                  }}
+                />
+              </li>
+            ))
+          }
+        />
+      </ul>
     </div>
   </Layout>
 );

@@ -5,12 +5,13 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Listing from "../components/listing";
 
-const Index = ({ location }) => (
+const IndexPage = ({ location }) => (
   <Layout location={location}>
     <SEO title="Home" />
     <Listing />
-    <Link to="/">Go back to the homepage</Link>
+    <Link to="/page-2/">Go to page 2</Link> <br />
+    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 );
 
-export default Index;
+export default IndexPage;

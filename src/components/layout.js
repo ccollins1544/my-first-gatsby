@@ -1,9 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
 import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
@@ -18,7 +12,7 @@ import "./layout.css";
 
 const MainLayout = styled.main`
   max-width: 90%;
-  margin: 1rem auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 40px;
@@ -34,7 +28,7 @@ const Layout = ({ children, location }) => (
             description
           }
         }
-        file(relativePath: { regex: "/Sunset-Living-Room-4-2880x1800/" }) {
+        file(relativePath: { regex: "/^Sunset-Living-Room-4-2880x1800/gm" }) {
           childImageSharp {
             fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid_tracedSVG
@@ -71,9 +65,6 @@ const Layout = ({ children, location }) => (
             </div>
           )}
         </Spring>
-        {/* {location.pathname === '/' && (
-          
-        )} */}
         <MainLayout>
           <div>{children}</div>
           <Archive />

@@ -1,24 +1,21 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
+import React from "react";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 
-export default class about extends Component {
-  render() {
-    const { location } = this.props;
-    return (
-      <Layout location={location}>
-        <SEO title="About Us" />
-        <h1>About Us</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem molestias
-          enim nisi fugit porro ducimus asperiores, delectus consequuntur amet,
-          libero tempore odio et excepturi nemo placeat ab tempora ad
-          recusandae.
-        </p>
-        <Link to="/">Go back to the homepage</Link>
-      </Layout>
-    );
-  }
-}
+const About = ({ location }) => (
+  <Layout location={location}>
+    <div>
+      <h1>About Us</h1>
+      <p>
+        Lorem ipsum dolor amet disrupt shabby chic sriracha forage yr green
+        juice kinfolk ennui taxidermy godard mlkshk affogato art party 8-bit
+        cornhole. Thundercats before they sold out asymmetrical next level
+        disrupt pok pok readymade pabst. Tousled poutine tote bag, kickstarter
+        mlkshk pickled kitsch. Fam ramps literally, kinfolk humblebrag taiyaki
+        letterpress locavore food truck keytar +1 sriracha yr keffiyeh.
+      </p>
+    </div>
+  </Layout>
+);
+
+export default About;
