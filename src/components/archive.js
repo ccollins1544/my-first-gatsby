@@ -7,7 +7,7 @@ const POST_ARCHIVE_QUERY = graphql`
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/(posts)/" } }
       limit: 5
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: ASC, fields: [frontmatter___date] }
     ) {
       edges {
         node {
