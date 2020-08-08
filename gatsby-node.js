@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  * Fix: https://github.com/gaearon/react-hot-loader/issues/1227
  */
-const path = require("path")
+const path = require("path");
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage.startsWith("develop")) {
@@ -14,12 +14,12 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
           "react-dom": "@hot-loader/react-dom",
         },
       },
-    })
+    });
   }
-}
+};
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   return new Promise((resolve, reject) => {
     graphql(`
       {
@@ -34,15 +34,15 @@ exports.createPages = ({ graphql, actions }) => {
     `).then(result => {
       result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
         createPage({
-          path: node.slug,
-          component: path.resolve("./src/posts/PostPage.js"),
+          path: `/posts/${node.slug}`,
+          component: path.resolve("./src/components/postLayout.js"),
           context: {
             slug: node.slug,
           },
-        })
-      })
+        });
+      });
 
-      resolve()
-    })
-  })
-}
+      resolve();
+    });
+  });
+};

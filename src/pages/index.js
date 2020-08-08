@@ -1,51 +1,21 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-import PostListing from "../components/Posts/PostListing"
+import Layout from "../components/layout";
+import Image from "../components/image";
+import SEO from "../components/seo";
+import Listing from "../components/listing";
 
 const IndexPage = ({ data, location }) => (
   <Layout location={location}>
     <SEO title="Home" />
-    <p>{data.site.siteMetadata.title}</p>
-    <p>{data.site.siteMetadata.description}</p>
-    {data.allContentfulBlogPost.edges.map(({ node }) => (
-      <PostListing key={node.id} post={node} />
-    ))}
+    <Listing />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
+    <Link to="/page-2/">Go to page 2</Link>
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
-)
+);
 
-export default IndexPage
-
-export const query = graphql`
-  query SiteMetaQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    allContentfulBlogPost {
-      edges {
-        node {
-          id
-          slug
-          title
-          createdAt(formatString: "MMMM DD, YYYY")
-          body {
-            childMarkdownRemark {
-              excerpt
-            }
-          }
-        }
-      }
-    }
-  }
-`
+export default IndexPage;
