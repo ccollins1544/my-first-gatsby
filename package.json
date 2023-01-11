@@ -17,7 +17,7 @@
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.23",
-    "gatsby-transformer-remark": "^2.8.28",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.12",
     "netlify-cms": "^2.10.55",
     "prop-types": "^15.7.2",
